@@ -1,6 +1,7 @@
 import express from "express";
 import fs from "fs";
 import os from "os";
+import dns from "dns";
 
 const app=express();
 
@@ -31,6 +32,20 @@ res.json({
 
 app.get("/getip",(req,res)=>{
 
+    dns.lookup("masaischool.com",(err,address)=>{
+
+        if(err)
+        {
+            console.log(err);
+            return;
+        }
+
+        res.send({hostname: "masaischool.com",
+                  ipAddress: `${address}`
+        })
+
+
+    })
 });
 
 app.get("/home",(req,res)=>{
