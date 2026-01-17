@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "userId": 1,
+      "title": "Learn NodeJS",
+      "status": false
+    },
+    {
+      "userId": 2,
+      "title": "Learn Database",
+      "status": false
+    },
+    {
+      "userId": 3,
+      "title": "Learn Express",
+      "status": false
+    },
+    {
+      "userId": 4,
+      "title": "This is my newly added user now added",
+      "status": false
+    },
+    {
+      "userId": 5,
+      "title": "This is my newly second added user now added",
+      "status": false
+    }
+  ],
+  "todos": [
+    {
+      "todoId": 1,
+      "title": "This is my first todo updated"
+    },
+    {
+      "todoId": 3,
+      "title": "This is my third todo updated"
+    },
+    {
+      "todoId": 4,
+      "title": "This is my fourth todo updated"
+    },
+    {
+      "todoId": 5,
+      "title": "This is my updated todo after adding Routers"
+    },
+    {
+      "todoId": 6,
+      "title": "This is my newly added todo"
+    }
+  ]
+}
