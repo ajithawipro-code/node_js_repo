@@ -1,0 +1,28 @@
+-- Aggregrate Queries--
+
+select count(*) from students_table
+
+select avg(age) from students_table
+
+select min(age) from students_table
+select max(age) from students_table
+
+select course, count(*) from students_table group by course
+
+select count(age) from students_table where age > 20
+
+-- Grouping & Filtering --
+
+select course, count(course) from students_table group by course
+
+select course from students_table group by course having count(course) >2
+
+select course, count(course) from students_table group by course order by count(course) desc 
+
+-- Ordering & Limiting --
+
+select * from students_table order by created_at desc, limit 3
+
+select * from students_table order by age desc limit 5
+
+select * from students_table where course='React' order by age desc
