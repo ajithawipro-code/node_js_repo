@@ -1,0 +1,26 @@
+create table STUDENTS_TABLE(id SERIAL PRIMARY KEY, name text, email text, age int, course text, created_at timestamp)
+
+insert into STUDENTS_TABLE(name,email,age,course,created_at) values
+('Alice','alice@gmail.com',23, 'React', NOW()),
+('Bob','bob@gmail.com',24, 'React', NOW()),
+('Charles','charles@gmail.com',21, 'React', NOW()),
+('Dave','dave@gmail.com',20, 'React', NOW()),
+('Earl','earl@gmail.com',19, 'React', NOW()),
+('Fred','fred@gmail.com',19, 'React', NOW()),
+('Ginny','ginny@gmail.com',21, 'React', NOW()),
+('Henry','henry@gmail.com',23, 'React', NOW()),
+('Jony','jony@gmail.com',22, 'React', NOW()),
+('Anne','anne@gmail.com',24, 'React', NOW());
+
+
+select * from students_table
+
+select * from students_table where course='Python'
+
+update students_table set age=25 where id=9
+
+update students_table set course = 'JavaScript' where course= 'Python'
+
+delete from students_table where id=6
+
+delete from students_table where age<21
