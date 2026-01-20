@@ -24,3 +24,12 @@ update students_table set course = 'JavaScript' where course= 'Python'
 delete from students_table where id=6
 
 delete from students_table where age<21
+
+id,name,email,age,course,created_at
+1,Alice,alice@gmail.com,23,React,2026-01-20 06:51:32.540138
+2,Bob,bob@gmail.com,24,Node,2026-01-20 06:51:32.540138
+8,Henry,henry@gmail.com,23,React,2026-01-20 06:51:32.540138
+10,Anne,anne@gmail.com,24,Node,2026-01-20 06:51:32.540138
+9,Jony,jony@gmail.com,25,React,2026-01-20 06:51:32.540138
+3,Charles,charles@gmail.com,21,JavaScript,2026-01-20 06:51:32.540138
+7,Ginny,ginny@gmail.com,21,JavaScript,2026-01-20 06:51:32.540138
