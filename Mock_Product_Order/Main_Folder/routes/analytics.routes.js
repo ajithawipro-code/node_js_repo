@@ -46,11 +46,11 @@ AnalyticsRoute.get("/total-revenue/:productId",(req,res)=>{
 
     const {productId}=req.params;
 
-    const orders=data.orders.filter((el)=>el.id===Number(productId));
+    const filtered_orders=data.orders.filter((el)=>el.id===Number(productId));
 
-    const final_orders=orders.filter((el)=>el.status==="cancelled");
+    const final_orders=filtered_orders.filter((el)=>el.status!="cancelled");
 
-    
+    res.status(200).json({message:"Orders after excluding cancelled Orders", final_orders});
 
 
 });
