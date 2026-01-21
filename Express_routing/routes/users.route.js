@@ -1,22 +1,13 @@
 import express from "express";
-import fs from "fs";
+
+import {readData,writeData} from "../models/todos.model.js";
+
+
 
 export const UserRouter = express.Router();
 
-function readData(){
 
-    const data = fs.readFileSync("./db.json","utf-8")
-    return JSON.parse(data);
-}
-
-function writeData(data){
-
-    fs.writeFileSync("./db.json",JSON.stringify(data,null,2));
-
-}
-
-
-UserRouter.post("/users/add",(req,res)=>{
+UserRouter.post("/add",(req,res)=>{
 
     const data=readData();
      let newId =1;
@@ -42,14 +33,14 @@ UserRouter.post("/users/add",(req,res)=>{
 });
 
 
-UserRouter.get("/users",(req,res)=>{
+UserRouter.get("/",(req,res)=>{
 
     const data=readData();
     res.status(200).json(data.users);
 });
 
 
-UserRouter.get("/users/:userId",(req,res)=>{
+UserRouter.get("/:userId",(req,res)=>{
 
     const data=readData();     
     
@@ -60,7 +51,7 @@ UserRouter.get("/users/:userId",(req,res)=>{
 
 });
 
-UserRouter.put("/users/update/:userId",(req,res)=>{
+UserRouter.put("/update/:userId",(req,res)=>{
 
     console.log("PUT route hit");
 
@@ -77,7 +68,7 @@ UserRouter.put("/users/update/:userId",(req,res)=>{
     res.status(201).json(user)
 })
 
-UserRouter.delete("/users/delete/:userId",(req,res)=>{
+UserRouter.delete("/delete/:userId",(req,res)=>{
    const data=readData();
    const userId=Number(req.params.userId);
 

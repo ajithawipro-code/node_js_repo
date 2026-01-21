@@ -24,6 +24,16 @@
       "userId": 5,
       "title": "This is my newly second added user now added",
       "status": false
+    },
+    {
+      "userId": 6,
+      "title": "This is my newly newly second added user now added",
+      "status": false
+    },
+    {
+      "userId": 7,
+      "title": "This is my newlvery veyr newly second added user now added",
+      "status": false
     }
   ],
   "todos": [
@@ -40,12 +50,65 @@
       "title": "This is my fourth todo updated"
     },
     {
-      "todoId": 5,
-      "title": "This is my updated todo after adding Routers"
+      "todoId": 5
     },
     {
-      "todoId": 6,
-      "title": "This is my newly added todo"
+      "todoId": 6
+    },
+    {
+      "todoId": 7,
+      "title": "This is my newlvery veyr newly second added user now added"
+    },
+    {
+      "todoId": 8,
+      "title": "This is mawesomely new added todos now added"
+    },
+    {
+      "todoId": 9,
+      "title": "This is controllers via new added todos now added"
+    },
+    {
+      "todoId": 10,
+      "title": "This is first todo after middleware now added"
+    },
+    {
+      "todoId": 11
+    },
+    {
+      "todoId": 12,
+      "title": "This is second todo after middleware now added"
+    },
+    {
+      "todoId": 13,
+      "title": "This is second todo after middleware now again added"
+    },
+    {
+      "todoId": 14,
+      "title": "This is second todo after middleware now again again added"
+    },
+    {
+      "todoId": 15,
+      "title": "This is second todo after LOGGER middleware now again again added"
+    },
+    {
+      "todoId": 16,
+      "title": "This is CORRECT todo after LOGGER middleware now again again added"
+    },
+    {
+      "todoId": 17,
+      "title": "Checking logger middleware now"
+    },
+    {
+      "todoId": 18,
+      "title": "Checking logger middleware now"
+    },
+    {
+      "todoId": 19,
+      "title": "Checking logger middleware nowwith in folder"
+    },
+    {
+      "todoId": 20,
+      "title": "Giving new title to check full code"
     }
   ]
 }
