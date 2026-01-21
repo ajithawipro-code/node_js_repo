@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Mobile",
+      "price": 40000,
+      "stock": 16
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "productId": 4,
+      "quantity": 2,
+      "totalAmount": 40000,
+      "status": "delivered",
+      "createdAt": "2026-01-21"
+    },
+    {
+      "id": 2,
+      "productId": 2,
+      "quantity": 2,
+      "totalAmount": 80000,
+      "status": "delivered",
+      "createdAt": "2026-01-21"
+    },
+    {
+      "id": 3,
+      "productId": 1,
+      "quantity": 2,
+      "totalAmount": 120000,
+      "status": "shipped",
+      "createdAt": "2026-01-21"
+    },
+    {
+      "id": 4,
+      "productId": 1,
+      "quantity": 1,
+      "totalAmount": 120000,
+      "status": "placed",
+      "createdAt": "2026-01-21"
+    },
+    {
+      "id": 5,
+      "productId": 1,
+      "quantity": 2,
+      "totalAmount": 120000,
+      "status": "placed",
+      "createdAt": "2026-01-21"
+    }
+  ]
+}
