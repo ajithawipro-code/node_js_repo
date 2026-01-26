@@ -1,0 +1,78 @@
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL UNIQUE,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER NOT NULL,
+  amount INTEGER NOT NULL CHECK (amount > 0),
+  status TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT NOW(),
+  CONSTRAINT fk_users_orders FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+INSERT INTO users (name, email)
+VALUES
+  ('Ajitha', 'ajitha@gmail.com'),
+  ('Sana', 'sana@gmail.com'),
+  ('Meena', 'meena@gmail.com'),
+  ('Divya', 'divya@gmail.com'),
+  ('Ravi', 'ravi@gmail.com');
+
+INSERT INTO orders (user_id, amount, status)
+VALUES
+  (1, 500, 'pending'),
+  (1, 800, 'shipped'),
+  (1, 1200, 'delivered'),
+  (2, 300, 'pending'),
+  (2, 900, 'cancelled'),
+  (3, 1500, 'pending'),
+  (3, 450, 'pending'),
+  (4, 700, 'delivered'),
+  (5, 250, 'pending'),
+  (5, 1000, 'shipped');
+
+SELECT * FROM users;
+
+SELECT * FROM orders;
+
+SELECT * FROM orders WHERE user_id = 1;
+
+SELECT u.id, u.name, COUNT(o.id) AS total_orders
+FROM users u
+JOIN orders o ON u.id = o.user_id
+GROUP BY u.id, u.name
+HAVING COUNT(o.id) > 1;
+
+SELECT u.id, u.name, SUM(o.amount) AS total_amount
+FROM users u
+JOIN orders o ON u.id = o.user_id
+GROUP BY u.id, u.name;
+
+UPDATE users
+SET email = 'meena_new@gmail.com'
+WHERE id = 3;
+
+UPDATE orders
+SET status = 'shipped'
+WHERE user_id = 2;
+
+UPDATE orders
+SET amount = 999
+WHERE id = 4;
+
+DELETE FROM orders
+WHERE id = 10;
+
+DELETE FROM orders
+WHERE user_id = 3;
+
+DELETE FROM users
+WHERE id = 1;
+
+-- Why should orders not be stored inside the users table?
+-- Because one user can have multiple orders, so storing orders in users breaks normalization, 
+causes duplication, and makes CRUD operations difficult.
