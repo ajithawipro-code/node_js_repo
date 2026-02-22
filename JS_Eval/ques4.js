@@ -1,32 +1,28 @@
 function runSequential(tasks,delay)
 {
 
-    for(i=0;i<tasks.length;i++)
-    {
+     return new Promise((resolve,reject)=>{
 
-        setTimeout(async()=>{
-        try{
-
-               const task = await tasks;
-              
-               if(!task)
+       setTimeout(()=>{
+      
+                            
+               if(tasks)
                {
-                 console.log("No task");
+                 resolve(tasks);
                }
 
-               return task;
-
-
-        }
-
-        catch(error)
-        {
-            console.log(error);
-        }   
+               else{
+                reject("Tasks Not found")
+               }   
       },1000);
 
-    }}
+    })
 
-    const res = runSequential(["run","walk"], 1000);
+}
 
-    console.log(res);
+
+runSequential().then(tasks=>{
+    console.log("tasks");
+}).catch(error=>{
+    console.log(error);
+})
