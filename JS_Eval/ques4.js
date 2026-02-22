@@ -14,7 +14,7 @@ function runSequential(tasks,delay)
                else{
                 reject("Tasks Not found")
                }   
-      },1000);
+      },delay);
 
     })
 
